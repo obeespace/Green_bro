@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/green_bro/static/css/main.94eb26b5.css",
+    "main.js": "/green_bro/static/js/main.3c726ab9.js",
+    "static/media/mustard.png": "/green_bro/static/media/mustard.84f75a13605d79d7bcd2.png",
+    "static/media/marijuanau.png": "/green_bro/static/media/marijuanau.3080d429b222aa4bb276.png",
+    "static/media/spinach.png": "/green_bro/static/media/spinach.184688c9cb657d9684c4.png",
+    "static/media/avater.jpg": "/green_bro/static/media/avater.8e7ab55da0bc52271ed8.jpg",
+    "index.html": "/green_bro/index.html",
+    "main.94eb26b5.css.map": "/green_bro/static/css/main.94eb26b5.css.map",
+    "main.3c726ab9.js.map": "/green_bro/static/js/main.3c726ab9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.94eb26b5.css",
+    "static/js/main.3c726ab9.js"
+  ]
+}
