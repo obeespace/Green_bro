@@ -2,14 +2,14 @@ import React from 'react'
 import { useStateValue } from '../context/StateProvider'
 import {MdOutlineDirectionsBike} from "react-icons/md"
 import homeImg from "../img/mustard.png"
-import { filterProps, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md'
 import VegetableRow from '../components/VegetableRow'
 
 const Home = () => {
 
   const [toggle, setToggle] = React.useState(true)
-  const [{items}, dispatch] = useStateValue()
+  const [{items}] = useStateValue()
   const vegetableDisplay = items?.filter((n) => n.category === "Leafy Vegetables")
   
   const rootDisplay = items?.filter((n) => n.category === "Root Veges")

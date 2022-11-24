@@ -2,16 +2,12 @@ import React, { useState } from 'react'
 import {BsFillCartFill} from "react-icons/bs"
 import {HiOutlineViewGridAdd} from "react-icons/hi"
 import {AiOutlineHome} from "react-icons/ai"
-import {FiUsers} from "react-icons/fi"
-import {AiOutlineUnorderedList} from "react-icons/ai"
-import {BsTelephone} from "react-icons/bs"
 import {BiLogOut} from "react-icons/bi"
 import headerImg from "../img/avater.jpg"
 import {motion} from "framer-motion"
 import { Link, useNavigate } from 'react-router-dom'
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
 import { app } from '../firebase.config'
-import { async } from '@firebase/util'
 import { useStateValue } from '../context/StateProvider'
 import { actionType } from '../context/reducer'
 import "../CSS/header.css"
@@ -57,16 +53,6 @@ const Header = () => {
     <div className=''>
       <div className="lg:flex hidden justify-between w-5/6 mx-auto sticky bg-white items-center">
         <Link to="/"><div className='py-5 font-semibold text-xl text-green-700'>Green Bro</div></Link>
-        <motion.ul 
-        initial={{opacity : 0, x :-200}} 
-        animate={{opacity : 1, x : 0}} 
-        exit={{opacity : 0, x :-200}} 
-        className='lg:flex gap-10 hidden'>
-          <li className = "menu_item"><Link to ="/">Home</Link></li>
-          <li className = "menu_item"><Link to ="/about">About Us</Link></li>
-          <li className = "menu_item">Menu</li>
-          <li className = "menu_item"><Link to ="/contact">Contact</Link></li>
-        </motion.ul>
         <div className='flex gap-4 items-center'>
           <div className='relative duration-300 transition-all ease-in-out hover:text-green-700 cursor-pointer hover:text-lg'>
             <BsFillCartFill className=''/>
@@ -106,9 +92,6 @@ const Header = () => {
               exit={{opacity : 0, scale : 0.6}}
               className='w-max bg-white shadow-xl rounded-lg text-green-800 flex flex-col absolute px-2 py-2 top-12 right-0'>
                 <Link onClick={closeMenu} to="/"><p className='px-4 py-2 rounded-lg flex flex-row items-center gap-4 hover:bg-green-700 hover:text-white transition-all duration-100 ease-in-out text-green-700 text-base cursor-pointer'>Home <AiOutlineHome/></p></Link>
-                <p className='px-4 py-2 rounded-lg flex flex-row items-center gap-4 hover:bg-green-700 hover:text-white transition-all duration-100 ease-in-out text-green-700 text-base cursor-pointer'>About Us <FiUsers/></p>
-                <p className='px-4 py-2 rounded-lg flex flex-row items-center gap-4 hover:bg-green-700 hover:text-white transition-all duration-100 ease-in-out text-green-700 text-base cursor-pointer'>Menu <AiOutlineUnorderedList/></p>
-                <p className='px-4 py-2 rounded-lg flex flex-row items-center gap-4 hover:bg-green-700 hover:text-white transition-all duration-100 ease-in-out text-green-700 text-base cursor-pointer'>Contact Us<BsTelephone/></p>
                 {user && user.email === "obeewon20@gmail.com" && <Link to="/new-item" onClick={closeMenu}><p className='px-4 py-2 rounded-lg flex flex-row items-center gap-4 hover:bg-green-800 hover:bg-green-700 hover:text-white transition-all duration-100 ease-in-out text-green-700 text-base cursor-pointer'>New Item <HiOutlineViewGridAdd/></p></Link>}
                 <p onClick={()=> {logOut(); closeMenu(); navigate("/")}} className='mx-auto px-4 mt-2 py-2 rounded-lg flex flex-row items-center gap-4 bg-green-800 hover:bg-green-600 hover:text-white transition-all duration-100 ease-in-out text-white text-base cursor-pointer'>Log Out <BiLogOut/></p>
               </motion.div>

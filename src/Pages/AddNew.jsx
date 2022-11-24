@@ -1,5 +1,4 @@
 import React from 'react'
-import dopeshot from "../img/marijuanau.png"
 import {AiOutlineCloudUpload} from "react-icons/ai"
 import {FaLeaf} from "react-icons/fa"
 import {motion} from "framer-motion"
@@ -20,7 +19,7 @@ const AddNew = () => {
   const [field, setField] = React.useState(false)
   const [message, setMessage] = React.useState()
   const [alert, setAlert] = React.useState("danger")
-  const [{items}, dispatch] = useStateValue()
+  const [dispatch] = useStateValue()
 
 
   const uploadImage = (e) => {
